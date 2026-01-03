@@ -17,7 +17,6 @@ function isLoggedIn(){
 function requireAuth(){
   const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
   if(file === "index.html") return;
-
   if(!isLoggedIn()){
     window.location.href = "index.html";
   }
