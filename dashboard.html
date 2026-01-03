@@ -10,52 +10,118 @@
 
 <div class="wrap">
 
-  <div class="sidebar">
-    <h2>Expo City</h2>
-    <a href="dashboard.html" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</a>
-    <a href="members.html" data-ar="الأعضاء" data-en="Members">الأعضاء</a>
-    <a href="actions.html" data-ar="الإجراءات" data-en="Actions">الإجراءات</a>
-    <a href="logs.html" data-ar="السجلات" data-en="Logs">السجلات</a>
-    <a href="settings.html" data-ar="الإعدادات" data-en="Settings">الإعدادات</a>
-  </div>
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="logo.png" class="brandLogo" alt="Expo City">
+      <div>
+        <div class="brandTitle">Expo City</div>
+        <div class="brandSub" data-ar="لوحة الإدارة" data-en="Admin Panel">لوحة الإدارة</div>
+      </div>
+    </div>
 
-  <div class="topbar">
-    <div data-ar="مرحبًا، Admin" data-en="Welcome, Admin">مرحبًا، Admin</div>
-    <div style="display:flex;gap:10px;align-items:center;">
-      <button id="langBtn" class="langbtn" onclick="toggleLang()">EN</button>
-      <a href="index.html" style="text-decoration:none;">
-        <button class="btn" data-ar="تسجيل خروج" data-en="Logout">تسجيل خروج</button>
+    <nav class="nav">
+      <a href="dashboard.html">
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M4 13.5V20a1 1 0 0 0 1 1h5v-6h4v6h5a1 1 0 0 0 1-1v-6.5a1 1 0 0 0-.36-.77l-7-5.6a1 1 0 0 0-1.28 0l-7 5.6A1 1 0 0 0 4 13.5Z" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</span>
       </a>
+
+      <a href="members.html">
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0ZM4 20a6 6 0 0 1 16 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span data-ar="الأعضاء" data-en="Members">الأعضاء</span>
+      </a>
+
+      <a href="actions.html">
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 2v6m0 14v-6M2 12h6m14 0h-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 7l4 4m6 6-4-4M17 7l-4 4M7 17l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span data-ar="الإجراءات" data-en="Actions">الإجراءات</span>
+      </a>
+
+      <a href="logs.html">
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M6 3h12a2 2 0 0 1 2 2v14l-4-2-4 2-4-2-4 2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span data-ar="السجلات" data-en="Logs">السجلات</span>
+      </a>
+
+      <a href="settings.html">
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="1.6"/><path d="M19.4 15a8.5 8.5 0 0 0 .1-2l2-1.2-2-3.5-2.3.6a8.6 8.6 0 0 0-1.7-1l-.3-2.4H11l-.3 2.4a8.6 8.6 0 0 0-1.7 1L6.7 8.3l-2 3.5 2 1.2a8.5 8.5 0 0 0 .1 2l-2 1.2 2 3.5 2.3-.6a8.6 8.6 0 0 0 1.7 1l.3 2.4h4l.3-2.4a8.6 8.6 0 0 0 1.7-1l2.3.6 2-3.5-2-1.2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        <span data-ar="الإعدادات" data-en="Settings">الإعدادات</span>
+      </a>
+    </nav>
+
+    <div class="hr"></div>
+    <div class="small" data-ar="Expo City — إصدار واجهة (UI) فقط" data-en="Expo City — UI build only">
+      Expo City — إصدار واجهة (UI) فقط
     </div>
-  </div>
+  </aside>
 
-  <div class="content">
-    <h1 data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</h1>
-
-    <div class="cards">
-      <div class="card">
-        <div class="small" data-ar="إجراءات اليوم" data-en="Actions Today">إجراءات اليوم</div>
-        <div style="font-size:28px;font-weight:800;margin-top:8px;">—</div>
-      </div>
-      <div class="card">
-        <div class="small" data-ar="تحذيرات اليوم" data-en="Warnings Today">تحذيرات اليوم</div>
-        <div style="font-size:28px;font-weight:800;margin-top:8px;">—</div>
-      </div>
-      <div class="card">
-        <div class="small" data-ar="الموظفين المتصلين" data-en="Staff Online">الموظفين المتصلين</div>
-        <div style="font-size:28px;font-weight:800;margin-top:8px;">—</div>
-      </div>
+  <header class="topbar">
+    <div class="topLeft">
+      <div class="pageTitle" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</div>
+      <div class="pageHint" data-ar="نظرة عامة على الإدارة" data-en="Admin overview">نظرة عامة على الإدارة</div>
     </div>
 
-    <div style="margin-top:18px;" class="card">
-      <div class="small" data-ar="آخر السجلات" data-en="Latest Logs">آخر السجلات</div>
-      <div style="margin-top:10px;line-height:1.8;">
-        <div>• Admin — Login</div>
-        <div>• Admin — Opened dashboard</div>
-      </div>
+    <div class="topRight">
+      <div class="pill" id="welcomeName">مرحبًا، Admin</div>
+      <button id="langBtn" class="langbtn" onclick="toggleLang()">EN</button>
+      <a href="index.html"><button class="btn btnGhost" data-ar="تسجيل خروج" data-en="Logout">تسجيل خروج</button></a>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="sectionTitle" data-ar="ملخص اليوم" data-en="Today Summary">ملخص اليوم</div>
+    <div class="sectionSub" data-ar="الأرقام هنا تجريبية للحين — بس الشكل احترافي" data-en="Numbers are demo for now — UI is production-style">
+      الأرقام هنا تجريبية للحين — بس الشكل احترافي
     </div>
 
-  </div>
+    <div class="grid2" style="margin-top:14px;">
+      <div class="card" style="grid-column: span 4;">
+        <div class="cardHeader">
+          <div>
+            <div class="cardTitle" data-ar="إجراءات اليوم" data-en="Actions Today">إجراءات اليوم</div>
+            <div class="cardValue">—</div>
+          </div>
+          <div class="spark"></div>
+        </div>
+      </div>
+
+      <div class="card" style="grid-column: span 4;">
+        <div class="cardHeader">
+          <div>
+            <div class="cardTitle" data-ar="تحذيرات اليوم" data-en="Warnings Today">تحذيرات اليوم</div>
+            <div class="cardValue">—</div>
+          </div>
+          <div class="spark"></div>
+        </div>
+      </div>
+
+      <div class="card" style="grid-column: span 4;">
+        <div class="cardHeader">
+          <div>
+            <div class="cardTitle" data-ar="موظفين متصلين" data-en="Staff Online">موظفين متصلين</div>
+            <div class="cardValue">—</div>
+          </div>
+          <div class="spark"></div>
+        </div>
+      </div>
+
+      <div class="card" style="grid-column: span 12;">
+        <div class="row">
+          <div>
+            <div class="cardTitle" data-ar="آخر السجلات" data-en="Latest Logs">آخر السجلات</div>
+            <div class="small" data-ar="هذي بتصير تلقائية يوم نربط البوت والداتا" data-en="This will auto-fill once we connect bot + database">
+              هذي بتصير تلقائية يوم نربط البوت والداتا
+            </div>
+          </div>
+          <a href="logs.html"><button class="btn btnGhost" data-ar="عرض الكل" data-en="View all">عرض الكل</button></a>
+        </div>
+
+        <div class="hr"></div>
+        <div class="small" style="line-height:1.9;">
+          • Admin — Login<br>
+          • Admin — Opened dashboard<br>
+          • Admin — Checked actions page
+        </div>
+      </div>
+    </div>
+  </main>
 
 </div>
 
