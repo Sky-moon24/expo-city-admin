@@ -1,0 +1,120 @@
+:root{
+  --bg:#161132;
+  --panel:#2F215B;
+  --primary:#398FE3;
+  --accent:#BF33DF;
+  --border: rgba(229,183,247,.18);
+  --text:#fff;
+  --muted: rgba(255,255,255,.7);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(191,51,223,.25), transparent 60%),
+              radial-gradient(900px 700px at 80% 30%, rgba(57,143,227,.18), transparent 55%),
+              var(--bg);
+  color:var(--text);
+}
+
+.sidebar{
+  width:220px;
+  background: rgba(47,33,91,.65);
+  backdrop-filter: blur(10px);
+  height:100vh;
+  position:fixed;
+  padding:20px;
+  border-left: 1px solid var(--border);
+}
+
+.sidebar h2{margin:0 0 14px 0}
+
+.sidebar a{
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  margin:10px 0;
+  padding:10px 12px;
+  border-radius:12px;
+  border: 1px solid rgba(229,183,247,.12);
+  background: rgba(22,17,50,.35);
+  opacity:.92;
+}
+
+.sidebar a:hover{opacity:1; transform: translateY(-1px);}
+
+.topbar{
+  margin-right:240px;
+  padding:15px 30px;
+  background: rgba(47,33,91,.55);
+  border-bottom: 1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter: blur(10px);
+}
+
+.content{
+  margin-right:240px;
+  padding:30px;
+}
+
+.card{
+  background: rgba(47,33,91,.45);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  padding:18px;
+  border-radius:16px;
+  box-shadow: 0 0 18px rgba(191,51,223,.18);
+}
+
+.cards{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  border:none;
+  border-radius:10px;
+  padding:10px 14px;
+  color:#fff;
+  cursor:pointer;
+  background: linear-gradient(90deg,var(--accent),var(--primary));
+}
+
+.btn:active{transform: scale(.99);}
+
+.table{
+  width:100%;
+  border-collapse:collapse;
+  overflow:hidden;
+  border-radius:14px;
+  border: 1px solid var(--border);
+  background: rgba(22,17,50,.35);
+}
+
+.table th,.table td{
+  padding:12px 10px;
+  border-bottom: 1px solid rgba(229,183,247,.10);
+  text-align:right;
+}
+
+.badge{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:12px;
+  border:1px solid rgba(229,183,247,.18);
+  background: rgba(191,51,223,.12);
+}
+
+.langbtn{
+  border:1px solid rgba(229,183,247,.18);
+  background: rgba(22,17,50,.35);
+  color:#fff;
+  padding:7px 10px;
+  border-radius:10px;
+  cursor:pointer;
+}
