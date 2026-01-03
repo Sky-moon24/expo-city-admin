@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Staff - Expo City</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+<div class="wrap">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="logo.png" class="brandLogo" alt="Expo City">
+      <div>
+        <div class="brandTitle">Expo City</div>
+        <div class="brandSub" data-ar="لوحة الإدارة" data-en="Admin Panel">لوحة الإدارة</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="dashboard.html"><span data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</span></a>
+      <a href="members.html"><span data-ar="الأعضاء" data-en="Members">الأعضاء</span></a>
+      <a href="actions.html"><span data-ar="الإجراءات" data-en="Actions">الإجراءات</span></a>
+      <a href="logs.html"><span data-ar="السجلات" data-en="Logs">السجلات</span></a>
+      <a href="staff.html"><span data-ar="الموظفين" data-en="Staff">الموظفين</span></a>
+      <a href="settings.html"><span data-ar="الإعدادات" data-en="Settings">الإعدادات</span></a>
+    </nav>
+
+    <div class="hr"></div>
+    <div class="small" data-ar="إدارة حسابات موظفين الإدارة (واجهة حالياً)" data-en="Manage admin staff accounts (UI for now)">
+      إدارة حسابات موظفين الإدارة (واجهة حالياً)
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <div class="topLeft">
+      <div class="pageTitle" data-ar="الموظفين" data-en="Staff">الموظفين</div>
+      <div class="pageHint" data-ar="حسابات الإدارة + الصلاحيات" data-en="Admin accounts & roles">حسابات الإدارة + الصلاحيات</div>
+    </div>
+
+    <div class="topRight">
+      <div class="pill" id="welcomeName">مرحبًا، Admin</div>
+      <button id="langBtn" class="langbtn" onclick="toggleLang()">EN</button>
+      <button class="btn btnGhost" onclick="logout()" data-ar="تسجيل خروج" data-en="Logout">تسجيل خروج</button>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="row">
+      <div>
+        <div class="sectionTitle" data-ar="إدارة الموظفين" data-en="Staff Management">إدارة الموظفين</div>
+        <div class="sectionSub" data-ar="هذي الصفحة بتصير شغّالة بالكامل يوم نسوي دخول حقيقي (Vercel + DB)" data-en="This becomes fully functional once we add real auth (Vercel + DB)">
+          هذي الصفحة بتصير شغّالة بالكامل يوم نسوي دخول حقيقي (Vercel + DB)
+        </div>
+      </div>
+      <button class="btn" data-ar="إضافة موظف (واجهة)" data-en="Add staff (UI)">إضافة موظف (واجهة)</button>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <div class="row">
+        <div style="flex:1; min-width:240px;">
+          <div class="label" data-ar="بحث" data-en="Search">بحث</div>
+          <input class="input" placeholder="Admin / username ...">
+        </div>
+        <div style="min-width:220px;">
+          <div class="label" data-ar="فلترة الدور" data-en="Role filter">فلترة الدور</div>
+          <input class="input" placeholder="Owner / Admin / Mod / Viewer">
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <div class="tableWrap">
+        <table class="table">
+          <tr>
+            <th data-ar="اسم المستخدم" data-en="Username">اسم المستخدم</th>
+            <th data-ar="الدور" data-en="Role">الدور</th>
+            <th data-ar="الحالة" data-en="Status">الحالة</th>
+            <th data-ar="إجراءات" data-en="Actions">إجراءات</th>
+          </tr>
+
+          <tr>
+            <td>owner</td>
+            <td><span class="badge"><span class="dot p"></span>Owner</span></td>
+            <td><span class="badge"><span class="dot"></span>Active</span></td>
+            <td class="small">—</td>
+          </tr>
+
+          <tr>
+            <td>admin_01</td>
+            <td><span class="badge"><span class="dot v"></span>Admin</span></td>
+            <td><span class="badge"><span class="dot"></span>Active</span></td>
+            <td>
+              <button class="btn btnGhost" data-ar="تعديل" data-en="Edit">تعديل</button>
+              <button class="btn btnGhost" data-ar="تعطيل" data-en="Disable">تعطيل</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>mod_02</td>
+            <td><span class="badge"><span class="dot"></span>Mod</span></td>
+            <td><span class="badge"><span class="dot p"></span>On leave</span></td>
+            <td>
+              <button class="btn btnGhost" data-ar="تعديل" data-en="Edit">تعديل</button>
+              <button class="btn btnGhost" data-ar="تعطيل" data-en="Disable">تعطيل</button>
+            </td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>
