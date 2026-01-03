@@ -10,6 +10,25 @@ function toggleLang(){
   setLang(lang === "ar" ? "en" : "ar");
 }
 
+function isLoggedIn(){
+  return localStorage.getItem("loggedIn") === "yes";
+}
+
+function requireAuth(){
+  const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+  if(file === "index.html") return;
+
+  if(!isLoggedIn()){
+    window.location.href = "index.html";
+  }
+}
+
+function logout(){
+  localStorage.removeItem("loggedIn");
+  localStorage.removeItem("demoUser");
+  window.location.href = "index.html";
+}
+
 function applyLang(){
   const html = document.documentElement;
   html.lang = lang;
@@ -18,13 +37,11 @@ function applyLang(){
   const sidebar = document.querySelector(".sidebar");
   const content = document.querySelector(".content");
   const topbar  = document.querySelector(".topbar");
-  const offset = 280; // قريب من عرض السايدبار
+  const offset = 280;
 
-  // RTL: يمين | LTR: يسار
   if(sidebar){
     sidebar.style.right = (lang==="ar") ? "0" : "auto";
     sidebar.style.left  = (lang==="en") ? "0" : "auto";
-    // border direction
     sidebar.style.borderLeft = (lang==="en") ? "1px solid rgba(255,255,255,.08)" : "none";
     sidebar.style.borderRight = (lang==="ar") ? "1px solid rgba(255,255,255,.08)" : "none";
   }
@@ -38,16 +55,13 @@ function applyLang(){
     topbar.style.marginLeft  = (lang==="en") ? offset+"px" : "0";
   }
 
-  // ترجمة النصوص
   document.querySelectorAll("[data-ar]").forEach(el=>{
     el.textContent = (lang==="ar") ? el.getAttribute("data-ar") : el.getAttribute("data-en");
   });
 
-  // زر اللغة
   const lb = document.getElementById("langBtn");
   if(lb) lb.textContent = (lang === "ar") ? "EN" : "AR";
 
-  // Active link highlight
   const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
   document.querySelectorAll(".nav a").forEach(a=>{
     const href = (a.getAttribute("href")||"").toLowerCase();
@@ -55,7 +69,6 @@ function applyLang(){
     else a.classList.remove("active");
   });
 
-  // Welcome name (demo)
   const w = document.getElementById("welcomeName");
   if(w){
     const u = localStorage.getItem("demoUser") || "Admin";
@@ -75,8 +88,13 @@ function demoLogin(){
     }
     return;
   }
+
   localStorage.setItem("demoUser", user);
+  localStorage.setItem("loggedIn", "yes");
   window.location.href = "dashboard.html";
 }
 
-document.addEventListener("DOMContentLoaded", applyLang);
+document.addEventListener("DOMContentLoaded", () => {
+  requireAuth();
+  applyLang();
+});
