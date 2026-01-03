@@ -10,53 +10,98 @@
 
 <div class="wrap">
 
-  <div class="sidebar">
-    <h2>Expo City</h2>
-    <a href="dashboard.html" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</a>
-    <a href="members.html" data-ar="الأعضاء" data-en="Members">الأعضاء</a>
-    <a href="actions.html" data-ar="الإجراءات" data-en="Actions">الإجراءات</a>
-    <a href="logs.html" data-ar="السجلات" data-en="Logs">السجلات</a>
-    <a href="settings.html" data-ar="الإعدادات" data-en="Settings">الإعدادات</a>
-  </div>
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="logo.png" class="brandLogo" alt="Expo City">
+      <div>
+        <div class="brandTitle">Expo City</div>
+        <div class="brandSub" data-ar="لوحة الإدارة" data-en="Admin Panel">لوحة الإدارة</div>
+      </div>
+    </div>
 
-  <div class="topbar">
-    <div data-ar="الأعضاء" data-en="Members">الأعضاء</div>
-    <div style="display:flex;gap:10px;align-items:center;">
+    <nav class="nav">
+      <a href="dashboard.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M4 13.5V20a1 1 0 0 0 1 1h5v-6h4v6h5a1 1 0 0 0 1-1v-6.5a1 1 0 0 0-.36-.77l-7-5.6a1 1 0 0 0-1.28 0l-7 5.6A1 1 0 0 0 4 13.5Z" stroke="currentColor" stroke-width="1.6"/></svg><span data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</span></a>
+      <a href="members.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0ZM4 20a6 6 0 0 1 16 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-ar="الأعضاء" data-en="Members">الأعضاء</span></a>
+      <a href="actions.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 2v6m0 14v-6M2 12h6m14 0h-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-ar="الإجراءات" data-en="Actions">الإجراءات</span></a>
+      <a href="logs.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M6 3h12a2 2 0 0 1 2 2v14l-4-2-4 2-4-2-4 2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span data-ar="السجلات" data-en="Logs">السجلات</span></a>
+      <a href="settings.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="1.6"/></svg><span data-ar="الإعدادات" data-en="Settings">الإعدادات</span></a>
+    </nav>
+
+    <div class="hr"></div>
+    <div class="small" data-ar="بحث وفلترة بتكون شغّالة يوم نربط الداتا" data-en="Search & filters become real once we connect data">
+      بحث وفلترة بتكون شغّالة يوم نربط الداتا
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <div class="topLeft">
+      <div class="pageTitle" data-ar="الأعضاء" data-en="Members">الأعضاء</div>
+      <div class="pageHint" data-ar="قائمة مرتبة + جاهزة للربط" data-en="Clean list, ready to connect">قائمة مرتبة + جاهزة للربط</div>
+    </div>
+
+    <div class="topRight">
+      <div class="pill" id="welcomeName">مرحبًا، Admin</div>
       <button id="langBtn" class="langbtn" onclick="toggleLang()">EN</button>
-      <a href="index.html" style="text-decoration:none;">
-        <button class="btn" data-ar="تسجيل خروج" data-en="Logout">تسجيل خروج</button>
-      </a>
+      <a href="index.html"><button class="btn btnGhost" data-ar="تسجيل خروج" data-en="Logout">تسجيل خروج</button></a>
     </div>
-  </div>
+  </header>
 
-  <div class="content">
-    <h1 data-ar="قائمة الأعضاء" data-en="Members List">قائمة الأعضاء</h1>
-
-    <div class="card" style="margin-bottom:14px;">
-      <div class="label" data-ar="بحث (واجهة فقط)" data-en="Search (UI only)">بحث (واجهة فقط)</div>
-      <input class="input" placeholder="Ahmed / Salem ...">
+  <main class="content">
+    <div class="row">
+      <div>
+        <div class="sectionTitle" data-ar="قائمة الأعضاء" data-en="Members List">قائمة الأعضاء</div>
+        <div class="sectionSub" data-ar="حالياً بيانات تجريبية — بس ترتيب جدول احترافي" data-en="Demo data for now — pro table layout">
+          حالياً بيانات تجريبية — بس ترتيب جدول احترافي
+        </div>
+      </div>
+      <button class="btn btnGhost" data-ar="إضافة عضو (واجهة)" data-en="Add Member (UI)">إضافة عضو (واجهة)</button>
     </div>
 
-    <table class="table">
-      <tr>
-        <th data-ar="الاسم" data-en="Name">الاسم</th>
-        <th data-ar="الرتبة" data-en="Role">الرتبة</th>
-        <th data-ar="القسم" data-en="Department">القسم</th>
-      </tr>
-      <tr>
-        <td>Ahmed</td>
-        <td><span class="badge">Admin</span></td>
-        <td>Police</td>
-      </tr>
-      <tr>
-        <td>Salem</td>
-        <td><span class="badge">Mod</span></td>
-        <td>EMS</td>
-      </tr>
-    </table>
+    <div class="card" style="margin-top:14px;">
+      <div class="row">
+        <div style="flex:1; min-width:240px;">
+          <div class="label" data-ar="بحث" data-en="Search">بحث</div>
+          <input class="input" placeholder="Ahmed / Salem ...">
+        </div>
+        <div style="min-width:220px;">
+          <div class="label" data-ar="فلترة القسم" data-en="Department filter">فلترة القسم</div>
+          <input class="input" placeholder="Police / EMS ...">
+        </div>
+      </div>
+    </div>
 
-  </div>
+    <div class="card" style="margin-top:14px;">
+      <div class="tableWrap">
+        <table class="table">
+          <tr>
+            <th data-ar="الاسم" data-en="Name">الاسم</th>
+            <th data-ar="الرتبة" data-en="Role">الرتبة</th>
+            <th data-ar="القسم" data-en="Department">القسم</th>
+            <th data-ar="الحالة" data-en="Status">الحالة</th>
+          </tr>
+          <tr>
+            <td>Ahmed</td>
+            <td><span class="badge"><span class="dot p"></span>Admin</span></td>
+            <td>Police</td>
+            <td><span class="badge"><span class="dot"></span>Active</span></td>
+          </tr>
+          <tr>
+            <td>Salem</td>
+            <td><span class="badge"><span class="dot v"></span>Mod</span></td>
+            <td>EMS</td>
+            <td><span class="badge"><span class="dot"></span>Active</span></td>
+          </tr>
+          <tr>
+            <td>Rashed</td>
+            <td><span class="badge"><span class="dot"></span>Viewer</span></td>
+            <td>Staff</td>
+            <td><span class="badge"><span class="dot p"></span>On leave</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
 
+  </main>
 </div>
 
 </body>
