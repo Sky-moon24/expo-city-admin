@@ -10,50 +10,84 @@
 
 <div class="wrap">
 
-  <div class="sidebar">
-    <h2>Expo City</h2>
-    <a href="dashboard.html" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</a>
-    <a href="members.html" data-ar="الأعضاء" data-en="Members">الأعضاء</a>
-    <a href="actions.html" data-ar="الإجراءات" data-en="Actions">الإجراءات</a>
-    <a href="logs.html" data-ar="السجلات" data-en="Logs">السجلات</a>
-    <a href="settings.html" data-ar="الإعدادات" data-en="Settings">الإعدادات</a>
-  </div>
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="logo.png" class="brandLogo" alt="Expo City">
+      <div>
+        <div class="brandTitle">Expo City</div>
+        <div class="brandSub" data-ar="لوحة الإدارة" data-en="Admin Panel">لوحة الإدارة</div>
+      </div>
+    </div>
 
-  <div class="topbar">
-    <div data-ar="الإجراءات" data-en="Actions">الإجراءات</div>
-    <div style="display:flex;gap:10px;align-items:center;">
+    <nav class="nav">
+      <a href="dashboard.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M4 13.5V20a1 1 0 0 0 1 1h5v-6h4v6h5a1 1 0 0 0 1-1v-6.5a1 1 0 0 0-.36-.77l-7-5.6a1 1 0 0 0-1.28 0l-7 5.6A1 1 0 0 0 4 13.5Z" stroke="currentColor" stroke-width="1.6"/></svg><span data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</span></a>
+      <a href="members.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0ZM4 20a6 6 0 0 1 16 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-ar="الأعضاء" data-en="Members">الأعضاء</span></a>
+      <a href="actions.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 2v6m0 14v-6M2 12h6m14 0h-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-ar="الإجراءات" data-en="Actions">الإجراءات</span></a>
+      <a href="logs.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M6 3h12a2 2 0 0 1 2 2v14l-4-2-4 2-4-2-4 2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span data-ar="السجلات" data-en="Logs">السجلات</span></a>
+      <a href="settings.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="1.6"/></svg><span data-ar="الإعدادات" data-en="Settings">الإعدادات</span></a>
+    </nav>
+
+    <div class="hr"></div>
+    <div class="small" data-ar="الأزرار UI بس — الربط مع البوت لاحقًا" data-en="Buttons are UI only — bot integration later">
+      الأزرار UI بس — الربط مع البوت لاحقًا
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <div class="topLeft">
+      <div class="pageTitle" data-ar="الإجراءات" data-en="Actions">الإجراءات</div>
+      <div class="pageHint" data-ar="تنفيذ أوامر الإدارة (تجريبي)" data-en="Run admin commands (demo)">تنفيذ أوامر الإدارة (تجريبي)</div>
+    </div>
+
+    <div class="topRight">
+      <div class="pill" id="welcomeName">مرحبًا، Admin</div>
       <button id="langBtn" class="langbtn" onclick="toggleLang()">EN</button>
-      <a href="index.html" style="text-decoration:none;">
-        <button class="btn" data-ar="تسجيل خروج" data-en="Logout">تسجيل خروج</button>
-      </a>
+      <a href="index.html"><button class="btn btnGhost" data-ar="تسجيل خروج" data-en="Logout">تسجيل خروج</button></a>
     </div>
-  </div>
+  </header>
 
-  <div class="content">
-    <h1 data-ar="إجراءات الإدارة (واجهة فقط)" data-en="Admin Actions (UI only)">إجراءات الإدارة (واجهة فقط)</h1>
-
-    <div class="card">
-      <div class="small" data-ar="اختاري عضو (حالياً مثال)" data-en="Pick a member (demo)">اختاري عضو (حالياً مثال)</div>
-      <div style="margin-top:10px;">
-        <span class="badge">Ahmed</span>
-        <span class="badge">Salem</span>
-      </div>
-
-      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-        <button class="btn">Warn</button>
-        <button class="btn">Unwarn</button>
-        <button class="btn">Promote</button>
-        <button class="btn">Demote</button>
-        <button class="btn">Fire</button>
-      </div>
-
-      <div class="small" style="margin-top:10px;" data-ar="ملاحظة: الأزرار ما تنفّذ شيء للحين" data-en="Note: Buttons don’t execute anything yet">
-        ملاحظة: الأزرار ما تنفّذ شيء للحين
-      </div>
+  <main class="content">
+    <div class="sectionTitle" data-ar="لوحة الأوامر" data-en="Command Center">لوحة الأوامر</div>
+    <div class="sectionSub" data-ar="اختاري عضو ثم نفذي الإجراء — (تجريبي حالياً)" data-en="Pick a member then run action — (demo for now)">
+      اختاري عضو ثم نفذي الإجراء — (تجريبي حالياً)
     </div>
 
-  </div>
+    <div class="grid2" style="margin-top:14px;">
+      <div class="card" style="grid-column: span 5;">
+        <div class="cardTitle" data-ar="اختيار العضو" data-en="Select member">اختيار العضو</div>
+        <div class="hr"></div>
 
+        <div class="row">
+          <span class="badge"><span class="dot p"></span>Ahmed</span>
+          <span class="badge"><span class="dot v"></span>Salem</span>
+          <span class="badge"><span class="dot"></span>Rashed</span>
+        </div>
+
+        <div class="small" style="margin-top:12px;" data-ar="لاحقاً بنحط بحث وربط بالداتا" data-en="Later we’ll add search + real data binding">
+          لاحقاً بنحط بحث وربط بالداتا
+        </div>
+      </div>
+
+      <div class="card" style="grid-column: span 7;">
+        <div class="cardTitle" data-ar="الإجراءات المتاحة" data-en="Available actions">الإجراءات المتاحة</div>
+        <div class="hr"></div>
+
+        <div class="row" style="justify-content:flex-start;">
+          <button class="btn">Warn</button>
+          <button class="btn btnGhost">Unwarn</button>
+          <button class="btn">Promote</button>
+          <button class="btn btnGhost">Demote</button>
+          <button class="btn">Fire</button>
+        </div>
+
+        <div class="hr"></div>
+        <div class="small" data-ar="يوم نربط بوت الدسكورد: كل زر بيسوي API call ويتسجل في Logs" data-en="When Discord bot is connected: each button triggers an API call and logs it">
+          يوم نربط بوت الدسكورد: كل زر بيسوي API call ويتسجل في Logs
+        </div>
+      </div>
+    </div>
+
+  </main>
 </div>
 
 </body>
