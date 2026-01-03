@@ -10,35 +10,43 @@
 
 <div class="loginWrap">
   <div class="loginCard">
-    <div class="row">
-      <div class="row" style="justify-content:flex-start;">
-        <img src="logo.png" alt="Expo City" style="width:44px;height:44px;border-radius:14px;">
+    <div class="loginGlow"></div>
+
+    <div class="loginHeader">
+      <div class="loginBrand">
+        <img src="logo.png" alt="Expo City" class="loginLogo">
         <div>
-          <div style="font-weight:700" data-ar="Expo City Admin" data-en="Expo City Admin">Expo City Admin</div>
-          <div class="small" data-ar="لوحة إدارة خاصة" data-en="Private Admin Dashboard">لوحة إدارة خاصة</div>
+          <div class="loginTitle" data-ar="Expo City Admin" data-en="Expo City Admin">Expo City Admin</div>
+          <div class="loginSub" data-ar="لوحة إدارة خاصة — دخول الموظفين فقط" data-en="Private admin — staff access only">
+            لوحة إدارة خاصة — دخول الموظفين فقط
+          </div>
         </div>
       </div>
 
       <button id="langBtn" class="langbtn" onclick="toggleLang()">EN</button>
     </div>
 
-    <div style="margin-top:18px;">
-      <div class="label" data-ar="اسم المستخدم" data-en="Username">اسم المستخدم</div>
-      <input class="input" placeholder="admin">
-    </div>
-
-    <div style="margin-top:12px;">
-      <div class="label" data-ar="كلمة المرور" data-en="Password">كلمة المرور</div>
-      <input class="input" type="password" placeholder="********">
-    </div>
-
-    <div style="margin-top:16px;">
-      <a href="dashboard.html" style="text-decoration:none;">
-        <button class="btn" style="width:100%;" data-ar="تسجيل الدخول" data-en="Sign in">تسجيل الدخول</button>
-      </a>
-      <div class="small" style="margin-top:10px;" data-ar="ملاحظة: هذا دخول تجريبي (واجهة فقط)" data-en="Note: This is a demo login (UI only)">
-        ملاحظة: هذا دخول تجريبي (واجهة فقط)
+    <div class="twoCols">
+      <div>
+        <div class="label" data-ar="اسم المستخدم" data-en="Username">اسم المستخدم</div>
+        <input id="u" class="input" placeholder="admin">
       </div>
+
+      <div>
+        <div class="label" data-ar="كلمة المرور" data-en="Password">كلمة المرور</div>
+        <input id="p" class="input" type="password" placeholder="••••••••">
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:14px;">
+      <div class="pill" data-ar="حماية: واجهة فقط حالياً" data-en="Security: UI only for now">حماية: واجهة فقط حالياً</div>
+      <div class="pill" data-ar="AR/EN جاهز" data-en="AR/EN ready">AR/EN جاهز</div>
+    </div>
+
+    <div style="margin-top:14px;">
+      <button class="btn" style="width:100%;" onclick="demoLogin()"
+        data-ar="تسجيل الدخول" data-en="Sign in">تسجيل الدخول</button>
+      <div id="loginMsg" class="small" style="margin-top:10px;"></div>
     </div>
 
   </div>
