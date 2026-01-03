@@ -20,11 +20,39 @@
     </div>
 
     <nav class="nav">
-      <a href="dashboard.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M4 13.5V20a1 1 0 0 0 1 1h5v-6h4v6h5a1 1 0 0 0 1-1v-6.5a1 1 0 0 0-.36-.77l-7-5.6a1 1 0 0 0-1.28 0l-7 5.6A1 1 0 0 0 4 13.5Z" stroke="currentColor" stroke-width="1.6"/></svg><span data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</span></a>
-      <a href="members.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0ZM4 20a6 6 0 0 1 16 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-ar="الأعضاء" data-en="Members">الأعضاء</span></a>
-      <a href="actions.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 2v6m0 14v-6M2 12h6m14 0h-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-ar="الإجراءات" data-en="Actions">الإجراءات</span></a>
-      <a href="logs.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M6 3h12a2 2 0 0 1 2 2v14l-4-2-4 2-4-2-4 2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span data-ar="السجلات" data-en="Logs">السجلات</span></a>
-      <a href="settings.html"><svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="1.6"/></svg><span data-ar="الإعدادات" data-en="Settings">الإعدادات</span></a>
+      <a href="dashboard.html">
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M4 13.5V20a1 1 0 0 0 1 1h5v-6h4v6h5a1 1 0 0 0 1-1v-6.5a1 1 0 0 0-.36-.77l-7-5.6a1 1 0 0 0-1.28 0l-7 5.6A1 1 0 0 0 4 13.5Z" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</span>
+      </a>
+
+      <a href="members.html">
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0ZM4 20a6 6 0 0 1 16 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span data-ar="الأعضاء" data-en="Members">الأعضاء</span>
+      </a>
+
+      <a href="actions.html">
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 2v6m0 14v-6M2 12h6m14 0h-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 7l4 4m6 6-4-4M17 7l-4 4M7 17l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span data-ar="الإجراءات" data-en="Actions">الإجراءات</span>
+      </a>
+
+      <a href="logs.html">
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M6 3h12a2 2 0 0 1 2 2v14l-4-2-4 2-4-2-4 2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span data-ar="السجلات" data-en="Logs">السجلات</span>
+      </a>
+
+      <!-- STAFF -->
+      <a href="staff.html">
+        <svg class="ico" viewBox="0 0 24 24" fill="none">
+          <path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0Z" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M4 20a6 6 0 0 1 8-5.65M12 20a6 6 0 0 1 8-5.65" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span data-ar="الموظفين" data-en="Staff">الموظفين</span>
+      </a>
+
+      <a href="settings.html">
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span data-ar="الإعدادات" data-en="Settings">الإعدادات</span>
+      </a>
     </nav>
 
     <div class="hr"></div>
@@ -42,7 +70,7 @@
     <div class="topRight">
       <div class="pill" id="welcomeName">مرحبًا، Admin</div>
       <button id="langBtn" class="langbtn" onclick="toggleLang()">EN</button>
-      <a href="index.html"><button class="btn btnGhost" data-ar="تسجيل خروج" data-en="Logout">تسجيل خروج</button></a>
+      <button class="btn btnGhost" onclick="logout()" data-ar="تسجيل خروج" data-en="Logout">تسجيل خروج</button>
     </div>
   </header>
 
@@ -73,8 +101,8 @@
       <div class="card" style="grid-column: span 5;">
         <div class="cardTitle" data-ar="الأمان" data-en="Security">الأمان</div>
         <div class="hr"></div>
-        <div class="small" data-ar="الدخول حالياً تجريبي. النظام الحقيقي يحتاج Vercel + Supabase عشان Username/Password حقيقي وصلاحيات." data-en="Login is demo. Real auth needs Vercel + Supabase for true usernames, passwords and roles.">
-          الدخول حالياً تجريبي. النظام الحقيقي يحتاج Vercel + Supabase عشان Username/Password حقيقي وصلاحيات.
+        <div class="small" data-ar="الدخول حالياً تجريبي. النظام الحقيقي يحتاج Vercel + قاعدة بيانات عشان Username/Password حقيقي وصلاحيات." data-en="Login is demo. Real auth needs Vercel + database for true usernames, passwords and roles.">
+          الدخول حالياً تجريبي. النظام الحقيقي يحتاج Vercel + قاعدة بيانات عشان Username/Password حقيقي وصلاحيات.
         </div>
 
         <div class="hr"></div>
