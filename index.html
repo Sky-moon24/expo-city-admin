@@ -6,57 +6,43 @@
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #161132;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    .login {
-      background: #2F215B;
-      padding: 30px;
-      border-radius: 16px;
-      width: 320px;
-      box-shadow: 0 0 30px rgba(191,51,223,.4);
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 12px;
-      border-radius: 8px;
-      border: none;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      background: linear-gradient(90deg,#BF33DF,#398FE3);
-      color: #fff;
-      font-weight: bold;
-      cursor: pointer;
-    }
-  </style>
-</head>
 <body>
 
-  <div class="login">
-    <h1>Expo City Admin</h1>
-    <input placeholder="اسم المستخدم">
-    <input type="password" placeholder="كلمة المرور">
-    <a href="dashboard.html">
-  <button>تسجيل الدخول</button>
-</a>
+<div class="loginWrap">
+  <div class="loginCard">
+    <div class="row">
+      <div class="row" style="justify-content:flex-start;">
+        <img src="brand/logo.png" alt="Expo City" style="width:44px;height:44px;border-radius:14px;">
+        <div>
+          <div style="font-weight:700" data-ar="Expo City Admin" data-en="Expo City Admin">Expo City Admin</div>
+          <div class="small" data-ar="لوحة إدارة خاصة" data-en="Private Admin Dashboard">لوحة إدارة خاصة</div>
+        </div>
+      </div>
+
+      <button id="langBtn" class="langbtn" onclick="toggleLang()">EN</button>
+    </div>
+
+    <div style="margin-top:18px;">
+      <div class="label" data-ar="اسم المستخدم" data-en="Username">اسم المستخدم</div>
+      <input class="input" placeholder="admin">
+    </div>
+
+    <div style="margin-top:12px;">
+      <div class="label" data-ar="كلمة المرور" data-en="Password">كلمة المرور</div>
+      <input class="input" type="password" placeholder="********">
+    </div>
+
+    <div style="margin-top:16px;">
+      <a href="dashboard.html" style="text-decoration:none;">
+        <button class="btn" style="width:100%;" data-ar="تسجيل الدخول" data-en="Sign in">تسجيل الدخول</button>
+      </a>
+      <div class="small" style="margin-top:10px;" data-ar="ملاحظة: هذا دخول تجريبي (واجهة فقط)" data-en="Note: This is a demo login (UI only)">
+        ملاحظة: هذا دخول تجريبي (واجهة فقط)
+      </div>
+    </div>
+
   </div>
+</div>
 
 </body>
 </html>
