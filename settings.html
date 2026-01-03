@@ -1,37 +1,59 @@
-<head>
-  <meta charset="UTF-8">
-  <title>Expo City Admin</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
-</head>
-
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>Settings</title>
-<style>
-body{margin:0;font-family:Arial;background:#161132;color:#fff}
-.sidebar{width:220px;background:#2F215B;height:100vh;position:fixed;padding:20px}
-.sidebar a{display:block;color:#fff;margin:12px 0;text-decoration:none}
-.content{margin-right:240px;padding:30px}
-</style>
+  <meta charset="UTF-8">
+  <title>Settings - Expo City</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
 
-<div class="sidebar">
-  <h2>Expo City</h2>
-  <a href="dashboard.html">Dashboard</a>
-  <a href="members.html">Members</a>
-  <a href="actions.html">Actions</a>
-  <a href="logs.html">Logs</a>
-  <a href="settings.html">Settings</a>
-</div>
+<div class="wrap">
 
-<div class="content">
-  <h1>الإعدادات</h1>
-  <p>إدارة الحسابات والصلاحيات (لاحقًا)</p>
+  <div class="sidebar">
+    <h2>Expo City</h2>
+    <a href="dashboard.html" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</a>
+    <a href="members.html" data-ar="الأعضاء" data-en="Members">الأعضاء</a>
+    <a href="actions.html" data-ar="الإجراءات" data-en="Actions">الإجراءات</a>
+    <a href="logs.html" data-ar="السجلات" data-en="Logs">السجلات</a>
+    <a href="settings.html" data-ar="الإعدادات" data-en="Settings">الإعدادات</a>
+  </div>
+
+  <div class="topbar">
+    <div data-ar="الإعدادات" data-en="Settings">الإعدادات</div>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <button id="langBtn" class="langbtn" onclick="toggleLang()">EN</button>
+      <a href="index.html" style="text-decoration:none;">
+        <button class="btn" data-ar="تسجيل خروج" data-en="Logout">تسجيل خروج</button>
+      </a>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1 data-ar="إعدادات اللوحة" data-en="Dashboard Settings">إعدادات اللوحة</h1>
+
+    <div class="card">
+      <div class="small" data-ar="إدارة الموظفين والصلاحيات (راح نضيفها لاحقًا)" data-en="Staff & roles management (coming next)">
+        إدارة الموظفين والصلاحيات (راح نضيفها لاحقًا)
+      </div>
+
+      <div style="margin-top:12px;">
+        <div class="label" data-ar="اسم السيرفر" data-en="Server Name">اسم السيرفر</div>
+        <input class="input" value="Expo City" />
+      </div>
+
+      <div style="margin-top:12px;">
+        <div class="label" data-ar="ملاحظات" data-en="Notes">ملاحظات</div>
+        <input class="input" placeholder="..." />
+      </div>
+
+      <div style="margin-top:14px;">
+        <button class="btn" data-ar="حفظ (واجهة فقط)" data-en="Save (UI only)">حفظ (واجهة فقط)</button>
+      </div>
+    </div>
+
+  </div>
+
 </div>
 
 </body>
