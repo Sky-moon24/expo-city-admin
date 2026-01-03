@@ -2,114 +2,62 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>Expo City Admin</title>
+  <title>Dashboard - Expo City</title>
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #161132;
-      color: #fff;
-    }
-    .sidebar {
-      width: 220px;
-      background: #2F215B;
-      height: 100vh;
-      position: fixed;
-      padding: 20px;
-    }
-    .sidebar h2 {
-      margin-top: 0;
-    }
-    .sidebar a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      margin: 12px 0;
-      opacity: .9;
-    }
-    .sidebar a:hover {
-      opacity: 1;
-    }
-    .topbar {
-      margin-right: 240px;
-      padding: 15px 30px;
-      background: rgba(47,33,91,.6);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logout {
-      background: linear-gradient(90deg,#BF33DF,#398FE3);
-      border: none;
-      border-radius: 8px;
-      padding: 8px 14px;
-      color: #fff;
-      cursor: pointer;
-    }
-    .content {
-      margin-right: 240px;
-      padding: 30px;
-    }
-    .cards {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    .card {
-      background: #2F215B;
-      padding: 20px;
-      border-radius: 14px;
-      min-width: 180px;
-      box-shadow: 0 0 20px rgba(191,51,223,.25);
-    }
-    .card span {
-      display: block;
-      opacity: .7;
-      margin-bottom: 8px;
-    }
-  </style>
-</head>
 <body>
+
+<div class="wrap">
 
   <div class="sidebar">
     <h2>Expo City</h2>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="#">Members</a>
-    <a href="#">Actions</a>
-    <a href="#">Records</a>
-    <a href="#">Logs</a>
-    <a href="#">Settings</a>
+    <a href="dashboard.html" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</a>
+    <a href="members.html" data-ar="الأعضاء" data-en="Members">الأعضاء</a>
+    <a href="actions.html" data-ar="الإجراءات" data-en="Actions">الإجراءات</a>
+    <a href="logs.html" data-ar="السجلات" data-en="Logs">السجلات</a>
+    <a href="settings.html" data-ar="الإعدادات" data-en="Settings">الإعدادات</a>
   </div>
 
   <div class="topbar">
-    <div>مرحبًا، Admin</div>
-    <a href="index.html">
-      <button class="logout">تسجيل خروج</button>
-    </a>
+    <div data-ar="مرحبًا، Admin" data-en="Welcome, Admin">مرحبًا، Admin</div>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <button id="langBtn" class="langbtn" onclick="toggleLang()">EN</button>
+      <a href="index.html" style="text-decoration:none;">
+        <button class="btn" data-ar="تسجيل خروج" data-en="Logout">تسجيل خروج</button>
+      </a>
+    </div>
   </div>
 
   <div class="content">
-    <h1>لوحة التحكم</h1>
+    <h1 data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</h1>
 
     <div class="cards">
       <div class="card">
-        <span>Actions Today</span>
-        <strong>—</strong>
+        <div class="small" data-ar="إجراءات اليوم" data-en="Actions Today">إجراءات اليوم</div>
+        <div style="font-size:28px;font-weight:800;margin-top:8px;">—</div>
       </div>
       <div class="card">
-        <span>Warnings Today</span>
-        <strong>—</strong>
+        <div class="small" data-ar="تحذيرات اليوم" data-en="Warnings Today">تحذيرات اليوم</div>
+        <div style="font-size:28px;font-weight:800;margin-top:8px;">—</div>
       </div>
       <div class="card">
-        <span>Staff Online</span>
-        <strong>—</strong>
+        <div class="small" data-ar="الموظفين المتصلين" data-en="Staff Online">الموظفين المتصلين</div>
+        <div style="font-size:28px;font-weight:800;margin-top:8px;">—</div>
       </div>
     </div>
+
+    <div style="margin-top:18px;" class="card">
+      <div class="small" data-ar="آخر السجلات" data-en="Latest Logs">آخر السجلات</div>
+      <div style="margin-top:10px;line-height:1.8;">
+        <div>• Admin — Login</div>
+        <div>• Admin — Opened dashboard</div>
+      </div>
+    </div>
+
   </div>
+
+</div>
 
 </body>
 </html>
