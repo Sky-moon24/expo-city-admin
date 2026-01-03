@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Expo City Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #161132;
+      color: #fff;
+    }
+    .sidebar {
+      width: 220px;
+      background: #2F215B;
+      height: 100vh;
+      position: fixed;
+      padding: 20px;
+    }
+    .sidebar h2 {
+      margin-top: 0;
+    }
+    .sidebar a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin: 12px 0;
+    }
+    .content {
+      margin-right: 240px;
+      padding: 30px;
+    }
+    .card {
+      background: #2F215B;
+      padding: 20px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-left: 15px;
+      min-width: 180px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Expo City</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Members</a>
+    <a href="#">Actions</a>
+    <a href="#">Logs</a>
+  </div>
+
+  <div class="content">
+    <h1>لوحة التحكم</h1>
+    <div class="card">Actions Today</div>
+    <div class="card">Warnings Today</div>
+    <div class="card">Staff Online</div>
+  </div>
+
+</body>
+</html>
