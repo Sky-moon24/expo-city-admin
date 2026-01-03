@@ -284,7 +284,7 @@ img{ display:block; }
 .table th, .table td{
   padding: 12px 12px;
   border-bottom: 1px solid rgba(255,255,255,.06);
-  text-align: start; /* will feel right in rtl/ltr */
+  text-align: start;
   white-space: nowrap;
 }
 .table th{
@@ -340,7 +340,6 @@ img{ display:block; }
   inset:-120px -120px auto auto;
   width: 280px; height: 280px;
   background: radial-gradient(circle at 30% 30%, rgba(181,76,255,.28), transparent 60%);
-  filter: blur(0px);
   pointer-events:none;
 }
 .loginHeader{
