@@ -25,18 +25,47 @@
       color: #fff;
       text-decoration: none;
       margin: 12px 0;
+      opacity: .9;
+    }
+    .sidebar a:hover {
+      opacity: 1;
+    }
+    .topbar {
+      margin-right: 240px;
+      padding: 15px 30px;
+      background: rgba(47,33,91,.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logout {
+      background: linear-gradient(90deg,#BF33DF,#398FE3);
+      border: none;
+      border-radius: 8px;
+      padding: 8px 14px;
+      color: #fff;
+      cursor: pointer;
     }
     .content {
       margin-right: 240px;
       padding: 30px;
     }
+    .cards {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
     .card {
       background: #2F215B;
       padding: 20px;
-      border-radius: 12px;
-      display: inline-block;
-      margin-left: 15px;
+      border-radius: 14px;
       min-width: 180px;
+      box-shadow: 0 0 20px rgba(191,51,223,.25);
+    }
+    .card span {
+      display: block;
+      opacity: .7;
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -44,17 +73,38 @@
 
   <div class="sidebar">
     <h2>Expo City</h2>
-    <a href="#">Dashboard</a>
+    <a href="dashboard.html">Dashboard</a>
     <a href="#">Members</a>
     <a href="#">Actions</a>
+    <a href="#">Records</a>
     <a href="#">Logs</a>
+    <a href="#">Settings</a>
+  </div>
+
+  <div class="topbar">
+    <div>مرحبًا، Admin</div>
+    <a href="index.html">
+      <button class="logout">تسجيل خروج</button>
+    </a>
   </div>
 
   <div class="content">
     <h1>لوحة التحكم</h1>
-    <div class="card">Actions Today</div>
-    <div class="card">Warnings Today</div>
-    <div class="card">Staff Online</div>
+
+    <div class="cards">
+      <div class="card">
+        <span>Actions Today</span>
+        <strong>—</strong>
+      </div>
+      <div class="card">
+        <span>Warnings Today</span>
+        <strong>—</strong>
+      </div>
+      <div class="card">
+        <span>Staff Online</span>
+        <strong>—</strong>
+      </div>
+    </div>
   </div>
 
 </body>
